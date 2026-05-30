@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="도재민 ♥ 김수인 결혼식 청첩장">
     <meta property="og:description" content="2026년 10월 31일 (토) 오후 1시 | 구미 라뷰웨딩">
-    <meta property="og:image" content="https://본인의_웹사이트_주소/images/1.jpg">
+    <meta property="og:image" content="images/1.jpg">
     <meta property="og:url" content="https://본인의_웹사이트_주소">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="도재민 ♥ 김수인 결혼식 청첩장">
     <meta name="twitter:description" content="2026년 10월 31일 (토) 오후 1시 | 구미 라뷰웨딩">
-    <meta name="twitter:image" content="https://본인의_웹사이트_주소/images/1.jpg">
+    <meta name="twitter:image" content="images/1.jpg">
     <title>도재민 ♥ 김수인 결혼식 청첩장</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,10 +97,15 @@
         .couple-card {
             background: white;
             border-radius: 15px;
-            padding: 30px 20px;
+            padding: 24px 20px;
             margin: 25px 0;
             box-shadow: 0 8px 20px rgba(202, 131, 110, 0.12);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
         }
 
         .couple-card:hover {
@@ -108,25 +113,128 @@
             box-shadow: 0 12px 30px rgba(202, 131, 110, 0.2);
         }
 
-        .groom, .bride {
-            margin: 15px 0;
+        .couple-name {
+            text-align: center;
         }
 
-        .groom p, .bride p {
+        .heart {
+            font-size: 32px;
+            color: #c4836e;
+        }
+
+        .couple-card .couple-caption {
+            flex: 0 0 100%;
+            margin-top: 14px;
+            font-size: 15px;
+            color: #5a3a3a;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 360px;
+        }
+
+        .couple-name p {
             font-size: 18px;
             color: #5a3a3a;
             margin: 5px 0;
         }
 
-        .groom .name, .bride .name {
+        .couple-name .name {
             font-size: 22px;
             font-weight: 700;
             color: #c4836e;
         }
 
-        .groom .parent, .bride .parent {
+        .couple-name .parent {
             font-size: 13px;
             color: #9b7b7b;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .album-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        .album-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .lightbox-overlay.open {
+            display: flex;
+        }
+
+        .lightbox-image {
+            width: auto;
+            height: auto;
+            max-width: min(90vw, 900px);
+            max-height: min(90vh, 90vw);
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .lightbox-close,
+        .lightbox-nav {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.18);
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-nav:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .lightbox-close {
+            top: 18px;
+            right: 18px;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-prev {
+            left: 18px;
+        }
+
+        .lightbox-next {
+            right: 18px;
         }
 
         .info-card {
@@ -427,7 +535,7 @@
     <div class="header">
         <p class="title">💍 함께 시작하는 새로운 여정</p>
         <h1 class="main-title">도재민 ♥ 김수인</h1>
-        <p class="subtitle">2026년 10월 결혼합니다</p>
+        <p class="subtitle">2026년 10월 31일 결혼합니다</p>
     </div>
 
     <!-- Photo -->
@@ -437,22 +545,22 @@
 
     <!-- Couple Info -->
     <div class="couple-card">
-        <div class="groom">
+        <div class="couple-name">
             <p class="name">도재민</p>
             <p class="parent">신랑</p>
         </div>
-        <div style="text-align: center; color: #c4836e; margin: 15px 0; font-size: 18px;">♥</div>
-        <div class="bride">
+        <div class="heart">♥</div>
+        <div class="couple-name">
             <p class="name">김수인</p>
             <p class="parent">신부</p>
         </div>
+        <p class="couple-caption">서로의 삶 속으로 들어가<br><span style="color: #c4836e; font-weight: 700;">하나의 마음</span>이 되어<br>소중한 인생을 함께 나누고 싶습니다.</p>
     </div>
 
     <!-- Date & Time -->
     <div class="info-card">
         <h3>📅 예식 안내</h3>
-        <p class="date-info">2026년 10월 31일 (토)</p>
-        <p class="date-info">오후 1시</p>
+        <p class="date-info">2026년 10월 31일 (토) 오후 1시</p>
         <p class="date-sub">※ 주차 안내: 웨딩홀 전용 주차장 이용</p>
     </div>
 
@@ -477,30 +585,29 @@
         <div class="contact-info">
             <div class="contact-item">
                 <span class="contact-label">신랑</span>
-                <a href="tel:010-1234-5678" style="color: #c4836e; text-decoration: none;">010-1234-5678</a>
+                <a href="tel:010-1234-5678" style="color: #c4836e; text-decoration: none;">010-7647-0611</a>
             </div>
             <div class="contact-item">
                 <span class="contact-label">신부</span>
-                <a href="tel:010-9876-5432" style="color: #c4836e; text-decoration: none;">010-9876-5432</a>
+                <a href="tel:010-9876-5432" style="color: #c4836e; text-decoration: none;">010-9122-6891</a>
             </div>
             <div class="contact-item">
                 <span class="contact-label">신랑 부</span>
-                <a href="tel:054-234-1234" style="color: #c4836e; text-decoration: none;">054-234-1234</a>
+                <a href="tel:054-234-1234" style="color: #c4836e; text-decoration: none;">010-9356-6686</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-label">신랑 모</span>
+                <a href="tel:010-1111-2222" style="color: #c4836e; text-decoration: none;">010-1111-2222</a>
             </div>
             <div class="contact-item">
                 <span class="contact-label">신부 부</span>
                 <a href="tel:054-567-8901" style="color: #c4836e; text-decoration: none;">054-567-8901</a>
             </div>
+            <div class="contact-item">
+                <span class="contact-label">신부 모</span>
+                <a href="tel:010-3333-4444" style="color: #c4836e; text-decoration: none;">010-3333-4444</a>
+            </div>
         </div>
-    </div>
-
-    <!-- Greeting -->
-    <div class="info-card">
-        <p style="font-size: 15px; color: #5a3a3a; line-height: 1.8; text-align: center;">
-            서로의 삶 속으로 들어가<br>
-            <span style="color: #c4836e; font-weight: 600;">하나의 마음</span>이 되어<br>
-            소중한 인생을 함께 나누고 싶습니다.
-        </p>
     </div>
 
     <!-- Account Info -->
@@ -524,7 +631,7 @@
         </div>
         <div class="account-item">
             <div class="account-left">
-                <div class="account-person">신랑 부모 (도재민 부)</div>
+                <div class="account-person">신랑 부 (도재민 부)</div>
                 <div class="account-details">농협</div>
                 <div class="account-number">456-789-012345</div>
             </div>
@@ -532,12 +639,43 @@
         </div>
         <div class="account-item">
             <div class="account-left">
-                <div class="account-person">신부 부모 (김수인 부)</div>
+                <div class="account-person">신랑 모 (도재민 모)</div>
+                <div class="account-details">국민은행</div>
+                <div class="account-number">321-654-987012</div>
+            </div>
+            <button class="copy-btn" onclick="copyAccount('321-654-987012')">복사</button>
+        </div>
+        <div class="account-item">
+            <div class="account-left">
+                <div class="account-person">신부 부 (김수인 부)</div>
                 <div class="account-details">하나은행</div>
                 <div class="account-number">789-012-345678</div>
             </div>
             <button class="copy-btn" onclick="copyAccount('789-012-345678')">복사</button>
         </div>
+        <div class="account-item">
+            <div class="account-left">
+                <div class="account-person">신부 모 (김수인 모)</div>
+                <div class="account-details">우리은행</div>
+                <div class="account-number">654-321-098765</div>
+            </div>
+            <button class="copy-btn" onclick="copyAccount('654-321-098765')">복사</button>
+        </div>
+    </div>
+
+    <!-- Photo Album -->
+    <div class="info-card">
+        <h3>📷 사진첩</h3>
+        <div class="album-grid" id="albumGrid">
+            <!-- 이미지가 있으면 자동으로 표시됩니다 -->
+        </div>
+    </div>
+
+    <div class="lightbox-overlay" id="lightboxOverlay" aria-hidden="true">
+        <button class="lightbox-close" aria-label="닫기">×</button>
+        <button class="lightbox-nav lightbox-prev" aria-label="이전">‹</button>
+        <img class="lightbox-image" id="lightboxImage" alt="사진 크게 보기">
+        <button class="lightbox-nav lightbox-next" aria-label="다음">›</button>
     </div>
 
     <!-- Guestbook -->
@@ -630,6 +768,110 @@
         });
     }
 
-    // 페이지 로드 시 방명록 초기화
-    window.addEventListener('load', initGuestbook);
+    const albumImages = new Array(20).fill(null);
+    let currentPhotoIndex = 0;
+    let touchStartX = 0;
+
+    function initAlbum() {
+        const albumGrid = document.getElementById('albumGrid');
+        const overlay = document.getElementById('lightboxOverlay');
+        if (!albumGrid || !overlay) return;
+
+        for (let i = 1; i <= 20; i++) {
+            const src = `images/${i}.jpg`;
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `사진 ${i}`;
+            img.dataset.index = i - 1;
+            img.onload = () => {
+                albumImages[i - 1] = src;
+                img.addEventListener('click', () => openLightbox(i - 1));
+                albumGrid.appendChild(img);
+            };
+            img.onerror = () => {
+                /* missing image, ignore */
+            };
+        }
+
+        const closeButton = document.querySelector('.lightbox-close');
+        const prevButton = document.querySelector('.lightbox-prev');
+        const nextButton = document.querySelector('.lightbox-next');
+
+        if (closeButton) closeButton.addEventListener('click', closeLightbox);
+        if (prevButton) prevButton.addEventListener('click', prevPhoto);
+        if (nextButton) nextButton.addEventListener('click', nextPhoto);
+
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) closeLightbox();
+        });
+
+        overlay.addEventListener('touchstart', (event) => {
+            touchStartX = event.changedTouches[0]?.clientX || 0;
+        });
+
+        overlay.addEventListener('touchend', (event) => {
+            const touchEndX = event.changedTouches[0]?.clientX || 0;
+            const diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? prevPhoto() : nextPhoto();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (!overlay.classList.contains('open')) return;
+            if (event.key === 'ArrowRight') nextPhoto();
+            if (event.key === 'ArrowLeft') prevPhoto();
+            if (event.key === 'Escape') closeLightbox();
+        });
+    }
+
+    function findNextIndex(startIndex, direction) {
+        const length = albumImages.length;
+        let index = startIndex;
+        for (let count = 0; count < length; count++) {
+            index = (index + direction + length) % length;
+            if (albumImages[index]) return index;
+        }
+        return -1;
+    }
+
+    function openLightbox(index) {
+        const validIndex = albumImages[index] ? index : findNextIndex(index, 1);
+        if (validIndex < 0) return;
+        showLightbox(validIndex);
+    }
+
+    function showLightbox(index) {
+        const overlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        if (!overlay || !lightboxImage || !albumImages[index]) return;
+
+        currentPhotoIndex = index;
+        lightboxImage.src = albumImages[index];
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+        const overlay = document.getElementById('lightboxOverlay');
+        if (!overlay) return;
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    function prevPhoto() {
+        const nextIndex = findNextIndex(currentPhotoIndex, -1);
+        if (nextIndex >= 0) showLightbox(nextIndex);
+    }
+
+    function nextPhoto() {
+        const nextIndex = findNextIndex(currentPhotoIndex, 1);
+        if (nextIndex >= 0) showLightbox(nextIndex);
+    }
+
+    // 페이지 로드 시 초기화
+    window.addEventListener('load', () => {
+        initGuestbook();
+        initAlbum();
+    });
 </script>
