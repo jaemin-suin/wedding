@@ -150,13 +150,13 @@
 
         .notice-card {
             background: #ffffff;
-            border: 1px solid #f0ebe3;
-            border-top: 2px solid #c4836e;
+            border: 1px solid #ecdfd0;
+            border-top: 3px solid #c4836e;
             border-radius: 3px 3px 16px 16px;
             padding: 32px 24px;
             margin: 25px 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 6px 20px rgba(196, 131, 110, 0.12);
         }
 
         .notice-mark {
@@ -309,6 +309,22 @@
             line-height: 1.7;
         }
 
+        .highlight-card {
+            background: #fdf8f3;
+            border: 1px solid #ecdfd0;
+            border-top: 3px solid #c4836e;
+            box-shadow: 0 4px 14px rgba(196, 131, 110, 0.08);
+        }
+
+        .highlight-card .date-info {
+            text-align: center;
+        }
+
+        .highlight-card .sub-note {
+            text-align: center;
+            color: #a68d7c;
+        }
+
         .date-info {
             font-size: 18px;
             color: #5a3a3a;
@@ -423,6 +439,34 @@
             align-items: center;
             padding: 14px 0;
             border-bottom: 1px solid #f0ebe3;
+        }
+
+        .account-names {
+            text-align: center;
+            padding: 6px 0 16px;
+            margin-bottom: 4px;
+            border-bottom: 1px solid #f0ebe3;
+            font-size: 15px;
+            color: #5a3a3a;
+            letter-spacing: 0.5px;
+        }
+
+        .account-names .role {
+            font-size: 11px;
+            color: #b8a299;
+            margin: 0 4px 0 10px;
+        }
+
+        .account-names .role:first-child {
+            margin-left: 0;
+        }
+
+        .account-group-label {
+            font-size: 12px;
+            color: #c4836e;
+            letter-spacing: 1px;
+            margin: 4px 0 8px;
+            font-weight: 600;
         }
 
         .account-item:last-child {
@@ -661,48 +705,22 @@
     <!-- Account Info -->
     <div class="info-card">
         <h3>💳 마음 전하기</h3>
-        <p class="sub-note" style="margin-top: -4px; margin-bottom: 16px;">마음을 전하실 수 있는 계좌를 안내드립니다.</p>
+        <p class="sub-note" style="margin-top: -4px; margin-bottom: 16px;">참석이 어려우신 분들을 위해<br>마음을 전하실 수 있는 계좌를 안내드립니다.</p>
+        <div class="account-names"><span class="role">신랑</span>오재민<span class="role">신부</span>김수인</div>
+        <p class="account-group-label">신랑측 부모</p>
         <div class="account-item">
             <div class="account-left">
-                <div class="account-person">신랑 오재민</div>
-                <div class="account-bank-line"><span class="bank-name">국민은행</span><span class="acct-num">123-456-789012</span></div>
+                <div class="account-person">신랑 부 오세홍</div>
+                <div class="account-bank-line"><span class="bank-name">농협</span><span class="acct-num">351 1370 6482 13</span></div>
             </div>
-            <button class="copy-btn" onclick="copyAccount('123-456-789012')">복사</button>
+            <button class="copy-btn" onclick="copyAccount('3511370648213')">복사</button>
         </div>
         <div class="account-item">
             <div class="account-left">
-                <div class="account-person">신부 김수인</div>
-                <div class="account-bank-line"><span class="bank-name">우리은행</span><span class="acct-num">987-654-321098</span></div>
+                <div class="account-person">신랑 모 손민주</div>
+                <div class="account-bank-line"><span class="bank-name">새마을금고</span><span class="acct-num">9003 2424 02115</span></div>
             </div>
-            <button class="copy-btn" onclick="copyAccount('987-654-321098')">복사</button>
-        </div>
-        <div class="account-item">
-            <div class="account-left">
-                <div class="account-person">신랑 부 (오재민 부)</div>
-                <div class="account-bank-line"><span class="bank-name">농협</span><span class="acct-num">456-789-012345</span></div>
-            </div>
-            <button class="copy-btn" onclick="copyAccount('456-789-012345')">복사</button>
-        </div>
-        <div class="account-item">
-            <div class="account-left">
-                <div class="account-person">신랑 모 (오재민 모)</div>
-                <div class="account-bank-line"><span class="bank-name">국민은행</span><span class="acct-num">321-654-987012</span></div>
-            </div>
-            <button class="copy-btn" onclick="copyAccount('321-654-987012')">복사</button>
-        </div>
-        <div class="account-item">
-            <div class="account-left">
-                <div class="account-person">신부 부 (김수인 부)</div>
-                <div class="account-bank-line"><span class="bank-name">하나은행</span><span class="acct-num">789-012-345678</span></div>
-            </div>
-            <button class="copy-btn" onclick="copyAccount('789-012-345678')">복사</button>
-        </div>
-        <div class="account-item">
-            <div class="account-left">
-                <div class="account-person">신부 모 (김수인 모)</div>
-                <div class="account-bank-line"><span class="bank-name">우리은행</span><span class="acct-num">654-321-098765</span></div>
-            </div>
-            <button class="copy-btn" onclick="copyAccount('654-321-098765')">복사</button>
+            <button class="copy-btn" onclick="copyAccount('9003242402115')">복사</button>
         </div>
     </div>
 
